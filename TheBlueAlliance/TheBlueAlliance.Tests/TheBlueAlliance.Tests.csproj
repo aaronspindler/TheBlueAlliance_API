@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{34B57AAC-5D64-435E-B0C8-3265A7860E8F}</ProjectGuid>
+    <ProjectGuid>{742593B4-96B4-475D-8BC8-1822ED3D67ED}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TheBlueAlliance_API.Tests</RootNamespace>
-    <AssemblyName>TheBlueAlliance_API.Tests</AssemblyName>
+    <RootNamespace>TheBlueAlliance.Tests</RootNamespace>
+    <AssemblyName>TheBlueAlliance.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -51,6 +51,15 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EventsUnitTests.cs" />
+    <Compile Include="MatchesUnitTests.cs" />
+    <Compile Include="TeamsUnitTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TheBlueAlliance\TheBlueAlliance.csproj">
+      <Project>{bcf41eb6-e78b-4c15-9415-f1860f3b90fb}</Project>
+      <Name>TheBlueAlliance</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

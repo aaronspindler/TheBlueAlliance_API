@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TheBlueAlliance_API")]
-[assembly: AssemblyDescription("A C# library used to access TheBlueAlliance.com data api")]
+[assembly: AssemblyTitle("TheBlueAlliance")]
+[assembly: AssemblyDescription("A C# library for accessing TheBlueAlliance.com's JSON data API easier!")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("xNovax")]
-[assembly: AssemblyProduct("TheBlueAlliance_API")]
+[assembly: AssemblyProduct("TheBlueAlliance")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("0140df58-b542-410c-b852-1ff8006ecee2")]
+[assembly: Guid("d847c763-f415-47de-858e-7eeaceee726f")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheBlueAlliance", "TheBlueAlliance\TheBlueAlliance.csproj", "{BCF41EB6-E78B-4C15-9415-F1860F3B90FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheBlueAlliance.Tests", "TheBlueAlliance.Tests\TheBlueAlliance.Tests.csproj", "{742593B4-96B4-475D-8BC8-1822ED3D67ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCF41EB6-E78B-4C15-9415-F1860F3B90FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCF41EB6-E78B-4C15-9415-F1860F3B90FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCF41EB6-E78B-4C15-9415-F1860F3B90FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCF41EB6-E78B-4C15-9415-F1860F3B90FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{742593B4-96B4-475D-8BC8-1822ED3D67ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{742593B4-96B4-475D-8BC8-1822ED3D67ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{742593B4-96B4-475D-8BC8-1822ED3D67ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{742593B4-96B4-475D-8BC8-1822ED3D67ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

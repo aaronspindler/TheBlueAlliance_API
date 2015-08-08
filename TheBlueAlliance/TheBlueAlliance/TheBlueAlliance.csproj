@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9324E392-DC0C-4689-8A60-2D788F018987}</ProjectGuid>
+    <ProjectGuid>{BCF41EB6-E78B-4C15-9415-F1860F3B90FB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TheBlueAlliance_API</RootNamespace>
-    <AssemblyName>TheBlueAlliance_API</AssemblyName>
+    <RootNamespace>TheBlueAlliance</RootNamespace>
+    <AssemblyName>TheBlueAlliance</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,10 +43,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Events.cs" />
+    <Compile Include="Matches.cs" />
+    <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\Eventawards.cs" />
+    <Compile Include="Models\EventDistrictPoints.cs" />
+    <Compile Include="Models\EventMatches.cs" />
+    <Compile Include="Models\EventRankings.cs" />
+    <Compile Include="Models\Events.cs" />
+    <Compile Include="Models\EventStats.cs" />
+    <Compile Include="Models\EventTeams.cs" />
+    <Compile Include="Models\MatchInformation_2015.cs" />
+    <Compile Include="Models\TeamEventAwards.cs" />
+    <Compile Include="Models\TeamEventMatches.cs" />
+    <Compile Include="Models\TeamEvents.cs" />
+    <Compile Include="Models\TeamHistoryAwards.cs" />
+    <Compile Include="Models\TeamHistoryEvents.cs" />
+    <Compile Include="Models\TeamInformation.cs" />
+    <Compile Include="Models\TeamMedia.cs" />
+    <Compile Include="Models\TeamYearsParticipated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Teams.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
