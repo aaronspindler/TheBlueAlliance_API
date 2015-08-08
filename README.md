@@ -23,5 +23,5 @@ A C# library to access TheBlueAlliance.com API easier using data models
 -   Team Media Locations
 
 ### To-Do
-- Add data caching for all data requests
-- Allow match information requests from previous years
+- [ ] Add data caching for all data requests
+- [ ] Allow match information requests from previous years
