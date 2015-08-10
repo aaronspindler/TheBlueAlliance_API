@@ -104,7 +104,41 @@ namespace TheBlueAlliance.Tests
         [TestMethod]
         public void GetTeamHistoryEventsTest()
         {
+            var actualEventInformation = Teams.GetTeamHistoryEvents("frc3710");
 
+            const string expectedKey = "2011on2";
+            const string expectedWebsite = "http://www.firstroboticscanada.org/site/index.php";
+            const bool expectedOfficial = true;
+            const string expectedEndDate = "2011-04-02";
+            const string expectedName = "Greater Toronto West Regional";
+            const string expectedShortName = "Greater Toronto West";
+            const object expectedFaceBookEid = null;
+            const object expectedEventDistrictString = null;
+            const string expectedVenueAddress = "Hershey Centre\n5500 Rose Cherry Place\nMississauga, ON L4Z 3G1\nCanada";
+            const int expectedEventDistrict = 0;
+            const string expectedLocation = "Mississauga, ON, Canada";
+            const string expectedEventCode = "on2";
+            const int expectedYear = 2011;
+            const string expectedEventTypeString = "Regional";
+            const string expectedStartDate = "2011-03-31";
+            const int expectedEventType = 0;
+
+            Assert.AreEqual(expectedKey, actualEventInformation[0].key, "Event Keys are not as expected");
+            Assert.AreEqual(expectedWebsite, actualEventInformation[0].website, "Websites are not as expected");
+            Assert.AreEqual(expectedOfficial, actualEventInformation[0].official, "Is Official are not as expected");
+            Assert.AreEqual(expectedEndDate, actualEventInformation[0].end_date, " are not as expected");
+            Assert.AreEqual(expectedName, actualEventInformation[0].name, "Event Names are not as expected");
+            Assert.AreEqual(expectedShortName, actualEventInformation[0].short_name, "Short Names are not as expected");
+            Assert.AreEqual(expectedFaceBookEid, actualEventInformation[0].facebook_eid, "Facebook EID are not as expected");
+            Assert.AreEqual(expectedEventDistrictString, actualEventInformation[0].event_district_string, "Event District Strings are not as expected");
+            Assert.AreEqual(expectedVenueAddress, actualEventInformation[0].venue_address, "Venue Addresses are not as expected");
+            Assert.AreEqual(expectedEventDistrict, actualEventInformation[0].event_district, "Event Districts are not as expected");
+            Assert.AreEqual(expectedLocation, actualEventInformation[0].location, "Locations are not as expected");
+            Assert.AreEqual(expectedEventCode, actualEventInformation[0].event_code, "Event Codes are not as expected");
+            Assert.AreEqual(expectedYear, actualEventInformation[0].year, "Years are not as expected");
+            Assert.AreEqual(expectedEventTypeString, actualEventInformation[0].event_type_string, "Event Type Strings are not as expected");
+            Assert.AreEqual(expectedStartDate, actualEventInformation[0].start_date, "Start Dates are not as expected");
+            Assert.AreEqual(expectedEventType, actualEventInformation[0].event_type, "Event Types are not as expected");
         }
 
         [TestMethod]
