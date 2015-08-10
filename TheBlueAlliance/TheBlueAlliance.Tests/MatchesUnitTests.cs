@@ -8,6 +8,26 @@ namespace TheBlueAlliance.Test
     public class MatchesUnitTests
     {
         [TestMethod]
+        public void GetMatchInformation2015NullTest()
+        {
+            var actualInformation = Matches.GetMatchInformation2015("2014cmp_f1m1");
+
+            MatchInformation_2015.Match expectedResult = null;
+
+            Assert.AreEqual(expectedResult, actualInformation);
+        }
+
+        [TestMethod]
+        public void GetMatchInformation2014NullTest()
+        {
+            var actualInformation = Matches.GetMatchInformation2014("2015cmp_f1m1");
+
+            MatchInformation_2015.Match expectedResult = null;
+
+            Assert.AreEqual(expectedResult, actualInformation);
+        }
+
+        [TestMethod]
         public void GetMatchInformation2015Test()
         {
             MatchInformation_2015.Match actualMatchInformation = Matches.GetMatchInformation2015("2015iri_qm43");
@@ -145,6 +165,49 @@ namespace TheBlueAlliance.Test
             Assert.AreEqual(expectedScoreBreakdownRed_litter_points, actualMatchInformation.score_breakdown.red.litter_points, "Red litter points are not as expected!");
 
             Assert.AreEqual(expected_coopertition_points, actualMatchInformation.score_breakdown.coopertition_points, "Coopertition points are not as expected!");
+
+            Assert.AreEqual(expectedAlliancesBlueScore, actualMatchInformation.alliances.blue.score, "Blue total score is not as expected!");
+            Assert.AreEqual(expectedAlliancesBlue0, actualMatchInformation.alliances.blue.teams[0], "Blue team alliances are not as expected!");
+            Assert.AreEqual(expectedAlliancesBlue1, actualMatchInformation.alliances.blue.teams[1], "Blue team alliances are not as expected!");
+            Assert.AreEqual(expectedAlliancesBlue2, actualMatchInformation.alliances.blue.teams[2], "Blue team alliances are not as expected!");
+            Assert.AreEqual(expectedAlliancesRedScore, actualMatchInformation.alliances.red.score, "Red total score is not as expected!");
+            Assert.AreEqual(expectedAlliancesRed0, actualMatchInformation.alliances.red.teams[0], "Red team alliances are not as expected!");
+            Assert.AreEqual(expectedAlliancesRed1, actualMatchInformation.alliances.red.teams[1], "Red team alliances are not as expected!");
+            Assert.AreEqual(expectedAlliancesRed2, actualMatchInformation.alliances.red.teams[2], "Red team alliances are not as expected!");
+
+            Assert.AreEqual(expectedEventKey, actualMatchInformation.event_key, "Event keys are not as expected!");
+        }
+
+        [TestMethod]
+        public void GetMatchInformation2014Test()
+        {
+            MatchInformation_2014.Match actualMatchInformation = Matches.GetMatchInformation2014("2014cmp_f1m1");
+
+            string expectedCompLevel = "f";
+            int expectedMatchNumber = 1;
+            string expectedTimeString = "5:38 PM";
+            int expectedSetNumber = 1;
+            string expectedKey = "2014cmp_f1m1";
+            int expectedTime = 1398551880;
+
+            int expectedAlliancesBlueScore = 361;
+            string expectedAlliancesBlue0 = "frc469";
+            string expectedAlliancesBlue1 = "frc2848";
+            string expectedAlliancesBlue2 = "frc254";
+
+            int expectedAlliancesRedScore = 236;
+            string expectedAlliancesRed0 = "frc1678";
+            string expectedAlliancesRed1 = "frc1640";
+            string expectedAlliancesRed2 = "frc1114";
+
+            string expectedEventKey = "2014cmp";
+
+            Assert.AreEqual(expectedCompLevel, actualMatchInformation.comp_level, "Comp Levels are not as expected!");
+            Assert.AreEqual(expectedMatchNumber, actualMatchInformation.match_number, "Match Numbers are not as expected!");
+            Assert.AreEqual(expectedTimeString, actualMatchInformation.time_string, "Time strings are not as expected!");
+            Assert.AreEqual(expectedSetNumber, actualMatchInformation.set_number, "Set numbers are not as expected!");
+            Assert.AreEqual(expectedKey, actualMatchInformation.key, "Keys are not as expected!");
+            Assert.AreEqual(expectedTime, actualMatchInformation.time, "Times are not as expected!");
 
             Assert.AreEqual(expectedAlliancesBlueScore, actualMatchInformation.alliances.blue.score, "Blue total score is not as expected!");
             Assert.AreEqual(expectedAlliancesBlue0, actualMatchInformation.alliances.blue.teams[0], "Blue team alliances are not as expected!");

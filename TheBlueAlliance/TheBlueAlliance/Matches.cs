@@ -11,9 +11,21 @@ namespace TheBlueAlliance
     {
         public static MatchInformation_2015.Match GetMatchInformation2015(string matchKey)
         {
+            if (matchKey.Substring(0, 4) != "2015") return null;
             if (GetMatchInformationJsonData(matchKey) != null)
             {
                 return JsonConvert.DeserializeObject<MatchInformation_2015.Match>(GetMatchInformationJsonData(matchKey));
+            }
+
+            return null;
+        }
+
+        public static MatchInformation_2014.Match GetMatchInformation2014(string matchKey)
+        {
+            if (matchKey.Substring(0, 4) != "2014") return null;
+            if (GetMatchInformationJsonData(matchKey) != null)
+            {
+                return JsonConvert.DeserializeObject<MatchInformation_2014.Match>(GetMatchInformationJsonData(matchKey));
             }
 
             return null;
