@@ -144,13 +144,43 @@ namespace TheBlueAlliance.Tests
         [TestMethod]
         public void GetTeamInformationTest()
         {
+            var actualInformation = TheBlueAlliance.Teams.GetTeamInformation("frc3710");
 
+            string expectedWebsite = "http://www.cyberfalcons.com";
+            string expectedName = "Limestone Learning Foundation and Haakon Industries & Frontenac Secondary School";
+            string expectedLocality = "Kingston";
+            int expectedRookieYear = 2011;
+            string expectedRegion = "Ontario";
+            int expectedTeamNumber = 3710;
+            string expectedLocation = "Kingston, Ontario, Canada";
+            string expectedKey = "frc3710";
+            string expectedCountryName = "Canada";
+            string expectedNickname = "FSS Cyber Falcons";
+
+            Assert.AreEqual(expectedWebsite,actualInformation.website);
+            Assert.AreEqual(expectedName,actualInformation.name);
+            Assert.AreEqual(expectedLocality,actualInformation.locality);
+            Assert.AreEqual(expectedRookieYear,actualInformation.rookie_year);
+            Assert.AreEqual(expectedRegion,actualInformation.region);
+            Assert.AreEqual(expectedTeamNumber,actualInformation.team_number);
+            Assert.AreEqual(expectedLocation,actualInformation.location);
+            Assert.AreEqual(expectedKey,actualInformation.key);
+            Assert.AreEqual(expectedCountryName,actualInformation.country_name);
+            Assert.AreEqual(expectedNickname,actualInformation.nickname);
         }
 
         [TestMethod]
         public void GetTeamMediaLocationsTest()
         {
+            var actualInformation = Teams.GetTeamMediaLocations("frc254", 2014);
 
+            string expectedType = "cdphotothread";
+            string expectedDetails = "fe3/fe38d320428adf4f51ac969efb3db32c_l.jpg";
+            string expectedForeignKey = "39894";
+
+            Assert.AreEqual(expectedType,actualInformation[0].type);
+            Assert.AreEqual(expectedDetails,actualInformation[0].details.image_partial);
+            Assert.AreEqual(expectedForeignKey,actualInformation[0].foreign_key);
         }
     }
 }
