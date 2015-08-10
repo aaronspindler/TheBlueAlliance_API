@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TheBlueAlliance.Models;
 
-namespace TheBlueAlliance.Test
+namespace TheBlueAlliance.Tests
 {
     [TestClass]
     public class TeamsUnitTests
@@ -110,11 +110,13 @@ namespace TheBlueAlliance.Test
         [TestMethod]
         public void GetTeamInformationTest()
         {
+
         }
 
         [TestMethod]
         public void GetTeamMediaLocationsTest()
         {
+
         }
     }
 }

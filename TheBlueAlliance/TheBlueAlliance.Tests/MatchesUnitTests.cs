@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TheBlueAlliance.Models;
 
-namespace TheBlueAlliance.Test
+namespace TheBlueAlliance.Tests
 {
     [TestClass]
     public class MatchesUnitTests
