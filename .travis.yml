@@ -1,0 +1,6 @@
+language: csharp
+solution: TheBlueAlliance.sln
+install:
+  - nuget restore TheBlueAlliance.sln
+script:
+  - xbuild /p:Configuration=Release TheBlueAlliance.sln
