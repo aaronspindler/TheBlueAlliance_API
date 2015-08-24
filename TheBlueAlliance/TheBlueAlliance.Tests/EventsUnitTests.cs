@@ -1,6 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TheBlueAlliance.Models;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TheBlueAlliance.Tests
 {
@@ -10,7 +8,7 @@ namespace TheBlueAlliance.Tests
         [TestMethod]
         public void GetEventInformation_TestMethod()
         {
-            Event.EventInformation actualEventInformation = Events.GetEventInformation("2015onto");
+            var actualEventInformation = Events.GetEventInformation("2015onto");
 
             const string expectedKey = "2015onto";
             const string expectedWebsite = "http://www.firstroboticscanada.org";
@@ -54,14 +52,14 @@ namespace TheBlueAlliance.Tests
         [TestMethod]
         public void GetEventAwards_TestMethod()
         {
-            EventAwards.Award[] actualAwardsInformation = Events.GetEventAwards("2015onto");
+            var actualAwardsInformation = Events.GetEventAwards("2015onto");
 
-            string actualEventKey = actualAwardsInformation[0].event_key;
-            int actualAwardType = actualAwardsInformation[0].award_type;
-            string actualAwardName = actualAwardsInformation[0].name;
-            int actualAwardRecipientListTeamNumber = actualAwardsInformation[0].recipient_list[0].team_number;
+            var actualEventKey = actualAwardsInformation[0].event_key;
+            var actualAwardType = actualAwardsInformation[0].award_type;
+            var actualAwardName = actualAwardsInformation[0].name;
+            var actualAwardRecipientListTeamNumber = actualAwardsInformation[0].recipient_list[0].team_number;
             object actualAwardRecipientListAwardee = actualAwardsInformation[0].recipient_list[0].awardee;
-            int actualYear = actualAwardsInformation[0].year;
+            var actualYear = actualAwardsInformation[0].year;
 
             const string expectedEventKey = "2015onto";
             const int expectedAwardType = 0;
@@ -81,7 +79,7 @@ namespace TheBlueAlliance.Tests
         [TestMethod]
         public void GetEventMatches_TestMethod()
         {
-            EventMatches.Match[] actualEventMatches = Events.GetEventMatches("2015onto");
+            var actualEventMatches = Events.GetEventMatches("2015onto");
 
             const string expectedCompLevel = "f";
             const int expectedMatchNumber = 1;
@@ -107,7 +105,7 @@ namespace TheBlueAlliance.Tests
         [TestMethod]
         public void GetEventRankings_TestMethod()
         {
-            EventRankings.Team[] actualEventRankings = Events.GetEventRankings("2015onto");
+            var actualEventRankings = Events.GetEventRankings("2015onto");
 
             const int expectedRank = 1;
             const int expectedTeam = 2056;
@@ -133,7 +131,7 @@ namespace TheBlueAlliance.Tests
         [TestMethod]
         public void GetEvents_TestMethod()
         {
-            Models.Events.Event[] actualEvents = Events.GetEvents(2015);
+            var actualEvents = Events.GetEvents(2015);
 
             const string expectedKey = "2015abca";
             const string expectedWebsite = "http://frcwest.com/";
@@ -175,17 +173,17 @@ namespace TheBlueAlliance.Tests
         [TestMethod]
         public void GetEventTeamsList_TestMethod()
         {
-            EventTeams.Team[] actualTeamList = Events.GetEventTeamsList("2015onto");
-            String expectedWebsite = "http://www.cyberfalcons.com";
-            string expectedTeamName = "Limestone Learning Foundation and Haakon Industries & Frontenac Secondary School";
-            string expectedLocality = "Kingston";
-            int expectedRookieYear = 2011;
-            string expectedRegion = "ON";
-            int expectedTeamNumber = 3710;
-            string expectedLocation = "Kingston, ON, Canada";
-            string expectedKey = "frc3710";
-            string expectedCountryName = "Canada";
-            string expectedNickName = "FSS Cyber Falcons";
+            var actualTeamList = Events.GetEventTeamsList("2015onto");
+            var expectedWebsite = "http://www.cyberfalcons.com";
+            var expectedTeamName = "Limestone Learning Foundation and Haakon Industries & Frontenac Secondary School";
+            var expectedLocality = "Kingston";
+            var expectedRookieYear = 2011;
+            var expectedRegion = "ON";
+            var expectedTeamNumber = 3710;
+            var expectedLocation = "Kingston, ON, Canada";
+            var expectedKey = "frc3710";
+            var expectedCountryName = "Canada";
+            var expectedNickName = "FSS Cyber Falcons";
             Assert.AreEqual(expectedWebsite, actualTeamList[20].website, "Team websites are not as expected!");
             Assert.AreEqual(expectedTeamName, actualTeamList[20].name, "Team names are not as expected!");
             Assert.AreEqual(expectedLocality, actualTeamList[20].locality, "Localities are not as expected!");

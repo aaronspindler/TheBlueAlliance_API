@@ -4,6 +4,7 @@ using System.Net;
 using System.Reflection;
 using Newtonsoft.Json;
 using TheBlueAlliance.Models;
+using TheBlueAlliance.Properties;
 
 namespace TheBlueAlliance
 {
@@ -36,8 +37,8 @@ namespace TheBlueAlliance
             try
             {
                 var wc = new WebClient();
-                wc.Headers.Add("X-TBA-App-Id", "3710-xNovax:FRC_Scouting_V2:" + Assembly.GetExecutingAssembly().GetName().Version);
-                string downloadedData = wc.DownloadString("http://www.thebluealliance.com/api/v2/match/" + matchKey);
+                wc.Headers.Add("X-TBA-App-Id", Settings.Default.Header_Address + Assembly.GetExecutingAssembly().GetName().Version);
+                var downloadedData = wc.DownloadString("http://www.thebluealliance.com/api/v2/match/" + matchKey);
                 if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\TBA\\Matches\\" + matchKey + ".json"))
                 {
                     File.Delete(AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\TBA\\Matches\\" + matchKey + ".json");

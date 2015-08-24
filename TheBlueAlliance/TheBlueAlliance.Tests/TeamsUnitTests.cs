@@ -1,6 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TheBlueAlliance.Models;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TheBlueAlliance.Tests
 {
@@ -10,15 +8,15 @@ namespace TheBlueAlliance.Tests
         [TestMethod]
         public void GetTeamEventAwardsTest()
         {
-            TeamEventAwards.Award[] actualInformation = Teams.GetTeamEventAwards("frc3710", "2015onto");
+            var actualInformation = Teams.GetTeamEventAwards("frc3710", "2015onto");
 
-            string expectedEventKey = "2015onto";
-            int expectedAwardType = 1;
-            string expectedName = "Regional Winners";
-            int expectedRecipientNumber0 = 2056;
-            int expectedRecipientNumber1 = 2852;
-            int expectedRecipientNumber2 = 3710;
-            int expectedYear = 2015;
+            var expectedEventKey = "2015onto";
+            var expectedAwardType = 1;
+            var expectedName = "Regional Winners";
+            var expectedRecipientNumber0 = 2056;
+            var expectedRecipientNumber1 = 2852;
+            var expectedRecipientNumber2 = 3710;
+            var expectedYear = 2015;
 
             Assert.AreEqual(expectedEventKey, actualInformation[0].event_key);
             Assert.AreEqual(expectedAwardType, actualInformation[0].award_type);
@@ -32,27 +30,27 @@ namespace TheBlueAlliance.Tests
         [TestMethod]
         public void GetTeamEventsTest()
         {
-            TeamEvents.Event[] actualInformation = Teams.GetTeamEvents("frc3710", 2015);
+            var actualInformation = Teams.GetTeamEvents("frc3710", 2015);
 
-            string expectedKey = "2015onnb";
-            string expectedWebsite = "http://www.firstroboticscanada.org";
-            Boolean expectedOfficial = true;
-            string expectedEndDate = "2015-03-28";
-            string expectedName = "North Bay Regional";
-            string expectedShortName = "North Bay";
+            var expectedKey = "2015onnb";
+            var expectedWebsite = "http://www.firstroboticscanada.org";
+            var expectedOfficial = true;
+            var expectedEndDate = "2015-03-28";
+            var expectedName = "North Bay Regional";
+            var expectedShortName = "North Bay";
             string expectedFacebookEID = null;
             string expectedEventDistrictString = null;
-            string expectedVenueAddress = "Nipissing University\n100 College Drive\nNorth Bay, ON P1B 8L7\nCanada";
-            int expectedEventDistrict = 0;
-            string expectedLocation = "North Bay, ON, Canada";
-            string expectedEventCode = "onnb";
-            int expectedYear = 2015;
-            string expectedWebcastType = "livestream";
-            string expectedWebcastChannel = "12312913";
-            string expectedWebcastFile = "3856137";
-            string expectedEventTypeString = "Regional";
-            string expectedStartDate = "2015-03-25";
-            int expectedEventType = 0;
+            var expectedVenueAddress = "Nipissing University\n100 College Drive\nNorth Bay, ON P1B 8L7\nCanada";
+            var expectedEventDistrict = 0;
+            var expectedLocation = "North Bay, ON, Canada";
+            var expectedEventCode = "onnb";
+            var expectedYear = 2015;
+            var expectedWebcastType = "livestream";
+            var expectedWebcastChannel = "12312913";
+            var expectedWebcastFile = "3856137";
+            var expectedEventTypeString = "Regional";
+            var expectedStartDate = "2015-03-25";
+            var expectedEventType = 0;
 
             Assert.AreEqual(expectedKey, actualInformation[0].key);
             Assert.AreEqual(expectedWebsite, actualInformation[0].website);
@@ -78,14 +76,14 @@ namespace TheBlueAlliance.Tests
         [TestMethod]
         public void GetTeamHistoricalAwardsTest()
         {
-            TeamHistoryAwards.Award[] actualInformation = Teams.GetTeamHistoricalAwards("frc3710");
+            var actualInformation = Teams.GetTeamHistoricalAwards("frc3710");
 
-            string expectedEventKey = "2011on2";
-            int expectedAwardType = 13;
-            string expectedAwardName = "Judges Award";
-            int expectedRecipientTeamNumber = 3710;
+            var expectedEventKey = "2011on2";
+            var expectedAwardType = 13;
+            var expectedAwardName = "Judges Award";
+            var expectedRecipientTeamNumber = 3710;
             string expectedRecipientAwardee = null;
-            int expectedYear = 2011;
+            var expectedYear = 2011;
 
             Assert.AreEqual(expectedEventKey, actualInformation[0].event_key);
             Assert.AreEqual(expectedAwardType, actualInformation[0].award_type);
@@ -138,29 +136,29 @@ namespace TheBlueAlliance.Tests
         [TestMethod]
         public void GetTeamInformationTest()
         {
-            var actualInformation = TheBlueAlliance.Teams.GetTeamInformation("frc3710");
+            var actualInformation = Teams.GetTeamInformation("frc3710");
 
-            string expectedWebsite = "http://www.cyberfalcons.com";
-            string expectedName = "Limestone Learning Foundation and Haakon Industries & Frontenac Secondary School";
-            string expectedLocality = "Kingston";
-            int expectedRookieYear = 2011;
-            string expectedRegion = "ON";
-            int expectedTeamNumber = 3710;
-            string expectedLocation = "Kingston, ON, Canada";
-            string expectedKey = "frc3710";
-            string expectedCountryName = "Canada";
-            string expectedNickname = "FSS Cyber Falcons";
+            var expectedWebsite = "http://www.cyberfalcons.com";
+            var expectedName = "Limestone Learning Foundation and Haakon Industries & Frontenac Secondary School";
+            var expectedLocality = "Kingston";
+            var expectedRookieYear = 2011;
+            var expectedRegion = "ON";
+            var expectedTeamNumber = 3710;
+            var expectedLocation = "Kingston, ON, Canada";
+            var expectedKey = "frc3710";
+            var expectedCountryName = "Canada";
+            var expectedNickname = "FSS Cyber Falcons";
 
-            Assert.AreEqual(expectedWebsite,actualInformation.website);
-            Assert.AreEqual(expectedName,actualInformation.name);
-            Assert.AreEqual(expectedLocality,actualInformation.locality);
-            Assert.AreEqual(expectedRookieYear,actualInformation.rookie_year);
-            Assert.AreEqual(expectedRegion,actualInformation.region);
-            Assert.AreEqual(expectedTeamNumber,actualInformation.team_number);
-            Assert.AreEqual(expectedLocation,actualInformation.location);
-            Assert.AreEqual(expectedKey,actualInformation.key);
-            Assert.AreEqual(expectedCountryName,actualInformation.country_name);
-            Assert.AreEqual(expectedNickname,actualInformation.nickname);
+            Assert.AreEqual(expectedWebsite, actualInformation.website);
+            Assert.AreEqual(expectedName, actualInformation.name);
+            Assert.AreEqual(expectedLocality, actualInformation.locality);
+            Assert.AreEqual(expectedRookieYear, actualInformation.rookie_year);
+            Assert.AreEqual(expectedRegion, actualInformation.region);
+            Assert.AreEqual(expectedTeamNumber, actualInformation.team_number);
+            Assert.AreEqual(expectedLocation, actualInformation.location);
+            Assert.AreEqual(expectedKey, actualInformation.key);
+            Assert.AreEqual(expectedCountryName, actualInformation.country_name);
+            Assert.AreEqual(expectedNickname, actualInformation.nickname);
         }
 
         [TestMethod]
@@ -168,13 +166,13 @@ namespace TheBlueAlliance.Tests
         {
             var actualInformation = Teams.GetTeamMediaLocations("frc254", 2014);
 
-            string expectedType = "cdphotothread";
-            string expectedDetails = "fe3/fe38d320428adf4f51ac969efb3db32c_l.jpg";
-            string expectedForeignKey = "39894";
+            var expectedType = "cdphotothread";
+            var expectedDetails = "fe3/fe38d320428adf4f51ac969efb3db32c_l.jpg";
+            var expectedForeignKey = "39894";
 
-            Assert.AreEqual(expectedType,actualInformation[0].type);
-            Assert.AreEqual(expectedDetails,actualInformation[0].details.image_partial);
-            Assert.AreEqual(expectedForeignKey,actualInformation[0].foreign_key);
+            Assert.AreEqual(expectedType, actualInformation[0].type);
+            Assert.AreEqual(expectedDetails, actualInformation[0].details.image_partial);
+            Assert.AreEqual(expectedForeignKey, actualInformation[0].foreign_key);
         }
     }
 }
