@@ -180,9 +180,9 @@ namespace TheBlueAlliance.Tests
             string expectedTeamName = "Limestone Learning Foundation and Haakon Industries & Frontenac Secondary School";
             string expectedLocality = "Kingston";
             int expectedRookieYear = 2011;
-            string expectedRegion = "Ontario";
+            string expectedRegion = "ON";
             int expectedTeamNumber = 3710;
-            string expectedLocation = "Kingston, Ontario, Canada";
+            string expectedLocation = "Kingston, ON, Canada";
             string expectedKey = "frc3710";
             string expectedCountryName = "Canada";
             string expectedNickName = "FSS Cyber Falcons";
