@@ -28,12 +28,16 @@ namespace TheBlueAlliance
             return teamEventAwardsToReturn.ToArray();
         }
 
-        public static TeamEventMatches.Match[] GetTeamEventMatches(string teamKey, string eventKey)
+        public static TeamEventMatches.Match[] GetTeamEventMatches2015(string teamKey, string eventKey)
         {
+            if (eventKey.Substring(0, 4) != "2015")
+            {
+                return null;
+            }
+
             var teamEventMatchesToReturn = new List<TeamEventMatches.Match>();
             var wc = new WebClient();
-            wc.Headers.Add("X-TBA-App-Id",
-                "3710-xNovax:FRC_Scouting_V2:" + Assembly.GetExecutingAssembly().GetName().Version);
+            wc.Headers.Add("X-TBA-App-Id","3710-xNovax:FRC_Scouting_V2:" + Assembly.GetExecutingAssembly().GetName().Version);
             try
             {
                 string url = ("http://www.thebluealliance.com/api/v2/team/" + teamKey + "/event/" + eventKey +

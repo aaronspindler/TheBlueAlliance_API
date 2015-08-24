@@ -30,12 +30,6 @@ namespace TheBlueAlliance.Tests
         }
 
         [TestMethod]
-        public void GetTeamEventMatchesTest()
-        {
-
-        }
-
-        [TestMethod]
         public void GetTeamEventsTest()
         {
             TeamEvents.Event[] actualInformation = Teams.GetTeamEvents("frc3710", 2015);
