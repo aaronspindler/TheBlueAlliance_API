@@ -1,5 +1,12 @@
 # TheBlueAlliance_API
-A C# library to access TheBlueAlliance.com API easier using data models 
+A C# library to access TheBlueAlliance.com API easier using data models
+
+##Now Available on NuGet
+[Link](https://www.nuget.org/packages/TheBlueAlliance_API/)
+
+```
+PM> Install-Package TheBlueAlliance_API
+```
 
 ## Currently Implemented Data Requests
 ###### Event Information
