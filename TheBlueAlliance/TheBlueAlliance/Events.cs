@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net;
 using System.Reflection;
 using Newtonsoft.Json;
@@ -10,6 +11,7 @@ namespace TheBlueAlliance
 {
     public class Events
     {
+        #region Event Information
         /// <summary>
         ///     Provides information for an event
         /// </summary>
@@ -17,40 +19,91 @@ namespace TheBlueAlliance
         /// <returns></returns>
         public static Event.EventInformation GetEventInformation(string eventCode)
         {
-            var eventToReturn = new Event.EventInformation();
+            if (GetEventInformationJson(eventCode) != null)
+            {
+                return JsonConvert.DeserializeObject<Event.EventInformation>(GetEventInformationJson(eventCode));
+            }
+            return null;
+        }
 
+        private static string GetEventInformationJson(string eventCode)
+        {
             var wc = new WebClient();
             wc.Headers.Add("X-TBA-App-Id", Settings.Default.Header_Address + Assembly.GetExecutingAssembly().GetName().Version);
             try
             {
                 var url = ("http://www.thebluealliance.com/api/v2/event/" + eventCode);
-                eventToReturn = JsonConvert.DeserializeObject<Event.EventInformation>(wc.DownloadString(url));
+                string downloadedData = wc.DownloadString(url);
+
+                if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\TBA\\Events\\EventInformation\\" + eventCode + ".json"))
+                {
+                    File.Delete(AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\TBA\\Events\\EventInformation\\" + eventCode + ".json");
+                }
+                Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\TBA\\Events\\EventInformation\\");
+                File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\TBA\\Events\\EventInformation\\" + eventCode + ".json", downloadedData);
+                return downloadedData;
             }
             catch (Exception webError)
             {
                 Console.WriteLine("Error Message: " + webError.Message);
+                return GetEventInformationCachedJson(eventCode);
             }
-            return eventToReturn;
         }
 
-        public static EventAwards.Award[] GetEventAwards(string eventKey)
+        private static string GetEventInformationCachedJson(string eventCode)
         {
-            var dataList = new List<EventAwards.Award>();
-            var eventAwardsToReturn = dataList.ToArray();
-            var wc = new WebClient();
-            wc.Headers.Add("X-TBA-App-Id", Settings.Default.Header_Address + Assembly.GetExecutingAssembly().GetName().Version);
+            if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\TBA\\Events\\EventInformation\\" + eventCode + ".json"))
+            {
+                return File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\TBA\\Events\\EventInformation\\" + eventCode + ".json");
+            }
+            return null;
+        }
+
+        #endregion
+
+        #region Event Awards
+        public static EventAwards.Award[] GetEventAwards(string eventCode)
+        {
+            if (GetEventAwardsJson(eventCode) != null)
+            {
+                return JsonConvert.DeserializeObject<List<EventAwards.Award>>(GetEventAwardsJson(eventCode)).ToArray();
+            }
+            return null;
+        }
+
+        private static string GetEventAwardsJson(string eventCode)
+        {
             try
             {
-                var url = ("http://www.thebluealliance.com/api/v2/event/" + eventKey + "/awards");
-                dataList = JsonConvert.DeserializeObject<List<EventAwards.Award>>(wc.DownloadString(url));
-                eventAwardsToReturn = dataList.ToArray();
+                var wc = new WebClient();
+                wc.Headers.Add("X-TBA-App-Id", Settings.Default.Header_Address + Assembly.GetExecutingAssembly().GetName().Version);
+
+                var url = ("http://www.thebluealliance.com/api/v2/event/" + eventCode + "/awards");
+                string downloadedData = wc.DownloadString(url);
+                if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\TBA\\Events\\EventAwards\\" + eventCode + ".json"))
+                {
+                    File.Delete(AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\TBA\\Events\\EventAwards\\" + eventCode + ".json");
+                }
+                Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\TBA\\Events\\EventAwards\\");
+                File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\TBA\\Events\\EventAwards\\" + eventCode + ".json", downloadedData);
+                return downloadedData;
             }
             catch (Exception webError)
             {
                 Console.WriteLine("Error Message: " + webError.Message);
+                return GetEventAwardsCachedJson(eventCode);
             }
-            return eventAwardsToReturn;
         }
+
+        private static string GetEventAwardsCachedJson(string eventCode)
+        {
+            if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\TBA\\Events\\EventAwards\\" + eventCode + ".json"))
+            {
+                return File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "\\Cache\\TBA\\Events\\EventAwards\\" + eventCode + ".json");
+            }
+            return null;
+        }
+        #endregion
 
         public static EventMatches.Match[] GetEventMatches(string eventKey)
         {
