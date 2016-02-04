@@ -142,9 +142,9 @@ namespace TheBlueAlliance.Tests
             var expectedName = "Limestone Learning Foundation and Haakon Industries & Frontenac Secondary School";
             var expectedLocality = "Kingston";
             var expectedRookieYear = 2011;
-            var expectedRegion = "ON";
+            var expectedRegion = "Ontario";
             var expectedTeamNumber = 3710;
-            var expectedLocation = "Kingston, ON, Canada";
+            var expectedLocation = "Kingston, Ontario, Canada";
             var expectedKey = "frc3710";
             var expectedCountryName = "Canada";
             var expectedNickname = "FSS Cyber Falcons";
