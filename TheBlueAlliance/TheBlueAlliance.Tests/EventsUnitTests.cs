@@ -175,7 +175,7 @@ namespace TheBlueAlliance.Tests
         {
             var actualTeamList = Events.GetEventTeamsList("2015onto");
             var expectedWebsite = "http://www.cyberfalcons.com";
-            var expectedTeamName = "Limestone Learning Foundation and Haakon Industries & Frontenac Secondary School";
+            var expectedTeamName = "Novelis  / Limestone Learning Foundation  / Queen's University / Transformix Engineering / Haakon Industries & Frontenac Secondary School";
             var expectedLocality = "Kingston";
             var expectedRookieYear = 2011;
             var expectedRegion = "Ontario";

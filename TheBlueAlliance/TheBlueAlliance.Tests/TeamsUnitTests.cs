@@ -139,7 +139,7 @@ namespace TheBlueAlliance.Tests
             var actualInformation = Teams.GetTeamInformation("frc3710");
 
             var expectedWebsite = "http://www.cyberfalcons.com";
-            var expectedName = "Limestone Learning Foundation and Haakon Industries & Frontenac Secondary School";
+            var expectedName = "Novelis  / Limestone Learning Foundation  / Queen's University / Transformix Engineering / Haakon Industries & Frontenac Secondary School";
             var expectedLocality = "Kingston";
             var expectedRookieYear = 2011;
             var expectedRegion = "Ontario";
